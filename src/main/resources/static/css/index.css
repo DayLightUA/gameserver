@@ -1,0 +1,15 @@
+.row-flex-end{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-self: flex-end;
+};
+
+.col-space-between{
+    display: flex;
+    justify-content: flex-end;
+};
+
+.login-btn{
+    background-color: coral;
+};

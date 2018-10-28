@@ -88,6 +88,7 @@ public class ContentService {
     private <T> List<T> paging(List<T> list, Long pageNumber){
         Integer firstIndex;
         Integer lastIndex;
+        if (list.size() == 0) return list;
         if (STANDART_PAGE_SIZE*pageNumber>= list.size()) lastIndex=list.size()-1;
         else lastIndex=STANDART_PAGE_SIZE*(int)(long)pageNumber;
         firstIndex = lastIndex-12;

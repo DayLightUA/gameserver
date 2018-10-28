@@ -32,7 +32,10 @@ public class PublicController {
 
     @PostMapping("/login")
     public LoginResponse login(@RequestBody LoginRequest request){
-        return accountService.login(request);
+        System.out.println(request.toString());
+        LoginResponse response = accountService.login(request);
+        System.out.println(response.toString());
+        return response;
     }
 
     @PostMapping("/restore-password")

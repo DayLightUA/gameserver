@@ -93,6 +93,17 @@
     
     
     <script>
+        $.ajax({
+                url: "http://localhost:8080/public/login",
+                contentType: "aplication/JSON",
+                type: "POST",
+                data: {nickName: "asd", password: "123"},
+                success: function(responseString){
+                    var result = $.parseJSON(responseString);
+                    alert(result.userRole);
+                },
+                error: alert('error')
+            });
         setLogNRegBTN();
     </script>
    

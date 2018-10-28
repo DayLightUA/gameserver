@@ -31,18 +31,20 @@ function openLoginPage(event){
         };
         
 function login(event){
-            var loginForm = {};
-            loginForm.nickName = $('form #login').val();
-            loginForm.password = $('form #password').val();
-            loginForm = accountRequests.loginRequest(loginForm);
-            
-            if (loginForm.isLoged){
-                 changeNavBarNReturnToPrevious(loginForm.nickName);
-            } else if (loginForm.uncorectNickName){
-                uncorectInput('form #login', "Введіть коректний логін");
-            } else if (loginForm.uncorectPassword){
-                uncorectInput('form #password', "Пароль не вірний");
-            };
+//            var loginForm = {};
+//            loginForm.nickName = $('form #login').val();
+//            loginForm.password = $('form #password').val();
+//            loginForm = accountRequests.loginRequest(loginForm);
+//
+//            if (loginForm.isLoged){
+//                 changeNavBarNReturnToPrevious(loginForm.nickName);
+//            } else if (loginForm.uncorectNickName){
+//                uncorectInput('form #login', "Введіть коректний логін");
+//            } else if (loginForm.uncorectPassword){
+//                uncorectInput('form #password', "Пароль не вірний");
+//            };
+
+
 }
         
 function restorePass(event){

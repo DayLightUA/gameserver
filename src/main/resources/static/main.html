@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+<body>
+   <button id="btn">push</button>
+    <div id="result"></div>
+
+
+    <script>
+        $('#btn').click(request);
+        var rqData = {"nickName": "secondAdmin", "password": "admin123"};
+        function request(event){
+            alert("send request");
+            $.ajax({
+                url: 'http://localhost:8080/public/login',
+                contentType: "aplication/JSON",
+                type: "POST",
+                data: JSON.stringify(rqData),
+                success: function (data){
+                    alert("suces");
+                    $('#result').empty();
+                    $('#result').append('<p>'+data.userToken+'</p>');
+                },
+                error: function(error){
+                    alert(error.message);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

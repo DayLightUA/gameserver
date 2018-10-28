@@ -1,5 +1,6 @@
 var accountRequests = {
             loginRequest: function (form){ 
+                alert("login request");
                 var request = {};
                 request.form = form;
                 request.data = form;
@@ -7,8 +8,9 @@ var accountRequests = {
                 request.success = function (data){
                     form.isLoged = true;
                     form.password = "********";
-                    localStorage.setItem("userToken", data.userToken)
-                    localStorage.setItem("userRole", data.userRole)
+                    localStorage.setItem("userToken", data.userToken);
+                    localStorage.setItem("userRole", data.userRole);
+                    alert("login suces");
                 };
                 request.error = function (error){
                     form.password = "";
@@ -18,6 +20,7 @@ var accountRequests = {
                     } else if (error.message == "Password is uncorect"){
                         form.uncorectPassword = false;
                     }
+                    alert("login error")
                 };
                 return ajaxRequest(request);
             },
@@ -111,7 +114,7 @@ var dataRequests = {
 
 var deleteRequest = {
     deleteCategory: function (data){
-        var request = {};
+        var request = {"form":{}, "data":{}};
         request.urlAppend = data.cardType+"/delete";
         request.form = data;
         request.data = data.cardId;
@@ -123,6 +126,7 @@ var deleteRequest = {
 
 
 function ajaxRequest(request, token){
+    alert("ajax request, data: "+request.data.toString());
     var form = request.form;
     if (token == null){
         request.urlAppend = "public"+request.urlAppend;
@@ -132,9 +136,12 @@ function ajaxRequest(request, token){
         contentType: "aplication/JSON",
         type: "POST",
         headers:{"token":"Bearer "+token},
-        data: JSON.stringify(request.data),
-        success: request.success,
-        error: request.error
+        data: JSON.stringify({
+            "nickName": "string",
+            "password": "string"
+        }),
+        success: alert(data.userRole),
+        error: alert(error.message)
     });
     return form;
 }

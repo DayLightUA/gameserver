@@ -38,7 +38,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("REST API")
                 .description("The REST API for demo swagger.").termsOfServiceUrl("")
-                .contact(new Contact("Yaromyr Yaremko", "", "yarik28@icloud.com"))
+                .contact(new Contact("Pavlo", "", "sosigi@gmail.com"))
                 .license("Apache License Version 2.0")
                 .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
                 .version("0.0.1")
